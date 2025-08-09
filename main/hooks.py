@@ -236,4 +236,11 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
+doc_events = {
+    "Customer": {
+        "validate": "main.validations.customer.validate_customer_name",
+        # You can add multiple events:
+        # "before_save": "your_app_name.validations.customer.before_save_customer",
+        # "on_submit": "your_app_name.validations.customer.on_submit_customer",
+    }
+}
