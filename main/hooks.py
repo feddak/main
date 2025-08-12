@@ -5,6 +5,7 @@ app_description = "*"
 app_email = "asf@asf"
 app_license = "mit"
 
+from . import __version__ as app_version
 # Apps
 # ------------------
 
@@ -244,3 +245,15 @@ doc_events = {
         # "on_submit": "your_app_name.validations.customer.on_submit_customer",
     }
 }
+
+doc_events = {
+    "Task": {
+        "before_validate": "main.task_customizations.task.extend_task_status_options",
+        "validate": "main.task_customizations.task.validate_task_status",
+    }
+}
+boot_session = "main.boot.boot_session"
+
+app_include_js = [
+    "/assets/main/js/task_status_extension.js"
+]
